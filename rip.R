@@ -81,9 +81,13 @@ if (!is.na(argv$pkgs[1])){
   pkg_list <- argv$pkgs
 }
 
-# at least one pkg...
-if (!is.na(pkg_list[1])){
-  lapply(pkg_list, check_and_install)
+# at least one pkg, then get installing...
+if (exists("pkg_list")){
+  if (isTRUE(argv$force)){
+    install.packages(pkg_list, repos = repo)
+  } else {
+    lapply(pkg_list, check_and_install)
+  }
   q()
 }
 
