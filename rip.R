@@ -35,7 +35,7 @@ argv <- parse_args(p)
 # main installer function
 check_and_install <- function(pkg_name){
   if (pkg_name %in% rownames(installed.packages()) == FALSE){
-    install.packages(pkg_name, quiet = argv$quiet)
+    install.packages(pkg_name, quiet = argv$quiet, repos = repo)
   } else {
     warning(pkg_name, " already installed - skipping", call. = FALSE)
   }
