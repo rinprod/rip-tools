@@ -31,5 +31,5 @@ argv <- parse_args(p)
 shiny::runApp(appDir = argv$dir,
               port = argv$port,
               host = argv$host,
-              test.mode = argv$test
+              test.mode = argv$test,
               launch.browser = FALSE)
