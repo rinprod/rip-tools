@@ -12,7 +12,8 @@ if (!require("argparser", quietly = TRUE)) {
 
 
 # argparser config
-p <- arg_parser("irp - installs R packages")
+p <- arg_parser("rip
+               -  installs R packages")
 p <- add_argument(p, "--pkgs",
                   help = "install packages",
                   nargs = Inf)
